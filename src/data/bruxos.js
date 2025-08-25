@@ -1,4 +1,4 @@
-export default [
+const bruxos = [
     {
         id: 1,
         nome: "Harry Potter",
@@ -50,3 +50,5 @@ export default [
         especialidade: "Ver criaturas imaginárias (ou não) 👻",
     },
 ];
+
+export default { bruxos };

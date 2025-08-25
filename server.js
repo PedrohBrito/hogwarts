@@ -2,7 +2,7 @@ import express from "express";
 
 import dados from "./src/data/dados.js"
 
-const { bruxos, casas, varinhas, animais, pocoes } = dados;
+const {  bruxos, casas, varinhas, animais, pocoes } = dados;
 const app = express();
 const porterServer = 3000;
 
@@ -11,10 +11,6 @@ app.get("/", (req,res) => {
 })
 
 app.get("/bruxos", (req, res) => {
-    res.json(bruxos);
-});
-
-app.get("/buxos", (req, res) => {
     if (bruxos.length > 0) {
         res.status(200).json(bruxos);  
     } else {
@@ -67,5 +63,5 @@ app.get("/pocoes", (req, res) => {
 
 
 app.listen(porterServer, () => {
-    console.log("🧙‍♂️ API dos Bruxos está no ar na porta 3000 !");
+    console.log(`🧙‍♂️ API dos Bruxos está no ar em http://localhost:${porterServer} !`);
 });
