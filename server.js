@@ -60,6 +60,59 @@ app.get("/pocoes", (req, res) => {
     }
 });
 
+// Rota por id
+
+app.get("/varinhas/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const varinha = varinhas.find(v => v.id === id);
+    
+    if (!varinha) {
+        return res.status(404).json({
+            sucess: false,
+            message: "Varinha não encontrada"
+        })
+    }
+    res.json({
+        sucess: true,
+        messege: "Varinha encontrada",
+        data: varinha
+    });
+});
+
+app.get("/animais/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const animal = animais.find(v => v.id === id);
+    
+    if (!animal) {
+        return res.status(404).json({
+            sucess: false,
+            message: "Animal não encontrado"
+        })
+    }
+    res.json({
+        sucess: true,
+        messege: "Animal encontrado",
+        data: animal
+    });
+}); 
+
+app.get("/pocoes/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    const pocao = pocoes.find(v => v.id === id);
+    
+    if (!pocao) {
+        return res.status(404).json({
+            sucess: false,
+            message: "Poção não encontrada"
+        })
+    }
+    res.json({
+        sucess: true,
+        messege: "Poção encontrada",
+        data: pocao
+    });
+}); 
+
 
 
 app.listen(porterServer, () => {
